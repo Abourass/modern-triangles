@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Triangles</title>
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
+  <style>
+    *, ::before, ::after {
+      box-sizing: inherit;
+    }
+
+    body, html {
+      margin: 0;
+      padding:0;
+    }
+
+    #wrapper {
+      position: relative;
+      width: 20%;
+      padding: 0 0 10rem 0;
+    }
+
+    #wrapper::before {
+      transition: opacity 1s ease;
+      background-attachment: fixed;
+      background-position: -50% 10%;
+      background-repeat: repeat-y;
+      background-size: 75% auto;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 50vw;
+      z-index: -1;
+    }
+    #wrapper > section > header::before {
+      height: calc(100% + 10rem);
+      left: calc(50vw - 5rem);
+      content: '';
+      display: block;
+      margin-top: 1rem;
+      position: absolute;
+      width: 2px;
+    }
+    #wrapper section > header {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+  <canvas id="canvas" title="Click to generate new pattern" width="100" height="100"></canvas>
+</div>
+</body>
+<script src="./js/triangles.js"></script>
+</html>
